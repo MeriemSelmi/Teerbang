@@ -1,6 +1,5 @@
 package com.iac.teerbang.manager;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,15 +36,16 @@ public class FlightManager {
 		fligths.add(flight1); fligths.add(flight2);
 	}
 	
-	public Flight getFlightByPassenger(String passport, String flightNumber) throws Exception{
+	public Flight getFlightByPassenger(String reservationNumer, String flightNumber) throws Exception{
 		for (Flight flight : fligths) {
-			System.out.println(flightNumber + " " + flight.getNumber());
+			System.out.println(reservationNumer + " " + flight.getReservationNumber()+flightNumber + " " + flight.getNumber());
 			if(flight.getNumber().equals(flightNumber)){
-				if(flight.getPassenger().getPassport().equals(passport)){
+				System.out.println(flight.getPassenger().getReservationNumber() + " " + reservationNumer);
+				if(flight.getPassenger().getReservationNumber().equals(reservationNumer)){
 					currentFlight = flight;
 					return flight;
 				}else{
-					throw new Exception("No such passport number");
+					throw new Exception("No such reservationNumer number");
 				}
 			}
 		}
@@ -53,7 +53,7 @@ public class FlightManager {
 		
 	}
 	
-	public String getSeatByPassenger(String passport, String flightNumber){
+	public String getSeatByPassenger(String reservationNumer, String flightNumber){
 		return currentFlight.getSeat();
 	}
 }

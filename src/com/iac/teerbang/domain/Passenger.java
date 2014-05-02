@@ -6,7 +6,7 @@ import java.util.List;
 public class Passenger {
 
 	String name;
-	String passport;
+	String reservationNumber;
 	List<Flight> flights;
 	
 	public Passenger() {
@@ -14,10 +14,10 @@ public class Passenger {
 		flights = new LinkedList<Flight>();
 	}
 
-	public Passenger(String name, String passport) {
+	public Passenger(String name, String reservationNumber) {
 		super();
 		this.name = name;
-		this.passport = passport;
+		this.reservationNumber = reservationNumber;
 		this.flights = new LinkedList<Flight>();
 	}
 
@@ -29,12 +29,12 @@ public class Passenger {
 		this.name = name;
 	}
 
-	public String getPassport() {
-		return passport;
+	public String getReservationNumber() {
+		return reservationNumber;
 	}
 
-	public void setPassport(String passport) {
-		this.passport = passport;
+	public void setReservationNumber(String reservationNumber) {
+		this.reservationNumber = reservationNumber;
 	}
 
 	public List<Flight> getFlights() {
