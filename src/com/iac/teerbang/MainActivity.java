@@ -155,9 +155,8 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		// Handle action buttons
-		switch (item.getItemId()) {
-		case R.id.action_websearch:
-			// create intent to perform web search for this planet
+
+		if (item.getItemId() == R.id.action_websearch) {
 			Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
 			intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
 			// catch event that there's no activity to handle intent
@@ -168,7 +167,12 @@ public class MainActivity extends Activity {
 						Toast.LENGTH_LONG).show();
 			}
 			return true;
-		default:
+		}
+
+		// create intent to perform web search for this planet
+
+		else {
+
 			return super.onOptionsItemSelected(item);
 		}
 	}
@@ -187,12 +191,13 @@ public class MainActivity extends Activity {
 		// update the main content by replacing fragments
 		Fragment fragment = new PlanetFragment();
 		Bundle args = new Bundle();
-		
+
 		args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
 		fragment.setArguments(args);
 
 		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+		fragmentManager.beginTransaction()
+				.replace(R.id.content_frame, fragment).commit();
 
 		// update selected item and title, then close the drawer
 		mDrawerList.setItemChecked(position, true);
@@ -229,7 +234,7 @@ public class MainActivity extends Activity {
 	 * Fragment that appears in the "content_frame", shows a planet
 	 */
 	public static class PlanetFragment extends Fragment {
-		
+
 		public static final String ARG_PLANET_NUMBER = "planet_number";
 
 		public PlanetFragment() {
@@ -237,18 +242,23 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			
-			View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
-			
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+
+			View rootView = inflater.inflate(R.layout.fragment_planet,
+					container, false);
+
 			int i = getArguments().getInt(ARG_PLANET_NUMBER);
-			String planet = getResources().getStringArray(R.array.airport_items_array)[i];
-			
-			if( i== 0 ){
-				rootView = inflater.inflate(R.layout.airplane, container, false);
+			String planet = getResources().getStringArray(
+					R.array.airport_items_array)[i];
+
+			if (i == 0) {
+				rootView = inflater
+						.inflate(R.layout.airplane, container, false);
 			}
 
-//			Toast.makeText(rootView.getContext(), String.valueOf(i), Toast.LENGTH_LONG).show();
+			// Toast.makeText(rootView.getContext(), String.valueOf(i),
+			// Toast.LENGTH_LONG).show();
 			getActivity().setTitle(planet);
 			return rootView;
 		}
