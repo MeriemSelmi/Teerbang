@@ -19,54 +19,57 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp" >
 
-        <EditText
-            android:id="@+id/checkReservation"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+         <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
             android:background="@drawable/myshape"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Reservation number"
-            android:padding="10dp"
-            android:text="res01"
-            android:textColorHint="#afafaf" >
-        </EditText>
+            android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/checkFlightNumber"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/checkReservation"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="-2dp"
-            android:background="@drawable/myshape"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Flight number"
-            android:text="1000AB1"
-            android:padding="10dp"
-            android:textColorHint="#afafaf" />
+            <EditText
+                android:id="@+id/checkReservation"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="N° Reservation"
+                android:padding="10dp"
+                android:text="res01"
+                android:textColorHint="#afafaf" >
+            </EditText>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#99afafaf"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/checkFlightNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="N° Vol"
+                android:padding="10dp"
+                android:text="1000AB1"
+                android:textColorHint="#afafaf" />
+        </LinearLayout>
 
         <Button
-            android:id="@+id/checkButton"
+            android:id="@+id/Login"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/checkFlightNumber"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_margin="10dp"
             android:background="@drawable/myshape"
-            android:text="Check in"
-            android:textColor="#afafaf" />
+            android:text="Connexion"
+            android:textColor="@android:color/background_dark" />
     </RelativeLayout>
 
 </LinearLayout>
