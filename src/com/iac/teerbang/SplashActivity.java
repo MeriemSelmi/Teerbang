@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.devspark.appmsg.AppMsg;
 import com.iac.teerbang.domain.Flight;
 import com.iac.teerbang.manager.FlightManager;
 
@@ -59,12 +60,13 @@ public class SplashActivity extends Activity {
 							reservationNumber.getText().toString(),
 							flightNumber.getText().toString());
 
-					Intent intent = new Intent(view.getContext(), MainActivity.class);
+					Intent intent = new Intent(view.getContext(),
+							MainActivity.class);
 					startActivity(intent);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					Toast.makeText(getApplicationContext(), "yarraaaaah",
-							Toast.LENGTH_SHORT).show();
+					AppMsg.makeText((Activity) view.getContext(),
+							"no such flight ", AppMsg.STYLE_ALERT).show();
 					e.printStackTrace();
 
 				}
