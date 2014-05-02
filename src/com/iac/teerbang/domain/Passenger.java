@@ -1,24 +1,23 @@
 package com.iac.teerbang.domain;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Passenger {
 
 	String name;
 	String reservationNumber;
-	List<Flight> flights;
-	
+	String seat;
+	String classs;
+
 	public Passenger() {
 		super();
-		flights = new LinkedList<Flight>();
 	}
 
-	public Passenger(String name, String reservationNumber) {
-		super();
+	public Passenger(String name, String reservationNumber, String seat,
+			String classs) {
 		this.name = name;
 		this.reservationNumber = reservationNumber;
-		this.flights = new LinkedList<Flight>();
+		this.seat = seat;
+		this.classs = classs;
+
 	}
 
 	public String getName() {
@@ -37,16 +36,20 @@ public class Passenger {
 		this.reservationNumber = reservationNumber;
 	}
 
-	public List<Flight> getFlights() {
-		return flights;
+	public String getSeat() {
+		return seat;
 	}
 
-	public void addFlight(Flight flight) {
-		flight.setPassenger(this);
-		this.flights.add(flight);
+	public void setSeat(String seat) {
+		this.seat = seat;
 	}
-	
-	
-	
-	
+
+	public String getClasss() {
+		return classs;
+	}
+
+	public void setClasss(String classs) {
+		this.classs = classs;
+	}
+
 }

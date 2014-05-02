@@ -1,55 +1,44 @@
 package com.iac.teerbang.domain;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import android.text.format.Time;
 
 public class Flight {
 
-	Passenger passenger;
 	String number;
-	String plane;
-	String reservationNumber;
 	String departureAirport;
 	String arrivalAirport;
 	Time departureTime;
 	Time arrivalTime;
-	String seat;
-	String classs;
 	String checkinAgency;
 	Time checkinStart;
 	Time checkinEnd;
 	String gate;
+	String plane;
+	List<Passenger> passengers;
 	
 	public Flight() {
 		super();
 	}
 	
-	public Flight(String number, String plane, String reservationNumber,
-			String departureAirport, String arrivalAirport, Time departureTime,
-			Time arrivalTime, String seat, String classs, String checkinAgency,
-			Time checkinStart, Time checkinEnd, String gate) {
+	public Flight(String number, String departureAirport,
+			String arrivalAirport, Time departureTime, Time arrivalTime,
+			String checkinAgency, Time checkinStart, Time checkinEnd,
+			String gate, String plane) {
 		super();
 		this.number = number;
-		this.plane = plane;
-		this.reservationNumber = reservationNumber;
 		this.departureAirport = departureAirport;
 		this.arrivalAirport = arrivalAirport;
 		this.departureTime = departureTime;
 		this.arrivalTime = arrivalTime;
-		this.seat = seat;
-		this.classs = classs;
 		this.checkinAgency = checkinAgency;
 		this.checkinStart = checkinStart;
 		this.checkinEnd = checkinEnd;
 		this.gate = gate;
-	}
-
-	
-	public Passenger getPassenger() {
-		return passenger;
-	}
-
-	public void setPassenger(Passenger passenger) {
-		this.passenger = passenger;
+		this.plane = plane;
+		this.passengers = new LinkedList<Passenger>();
 	}
 
 	public String getNumber() {
@@ -58,22 +47,6 @@ public class Flight {
 
 	public void setNumber(String number) {
 		this.number = number;
-	}
-	
-	public String getPlane() {
-		return plane;
-	}
-
-	public void setPlane(String plane) {
-		this.plane = plane;
-	}
-
-	public String getReservationNumber() {
-		return reservationNumber;
-	}
-
-	public void setReservationNumber(String reservationNumber) {
-		this.reservationNumber = reservationNumber;
 	}
 
 	public String getDepartureAirport() {
@@ -108,22 +81,6 @@ public class Flight {
 		this.arrivalTime = arrivalTime;
 	}
 
-	public String getSeat() {
-		return seat;
-	}
-
-	public void setSeat(String seat) {
-		this.seat = seat;
-	}
-
-	public String getClasss() {
-		return classs;
-	}
-
-	public void setClasss(String classs) {
-		this.classs = classs;
-	}
-
 	public String getCheckinAgency() {
 		return checkinAgency;
 	}
@@ -144,8 +101,8 @@ public class Flight {
 		return checkinEnd;
 	}
 
-	public void setCheckinEnd(Time chekinEnd) {
-		this.checkinEnd = chekinEnd;
+	public void setCheckinEnd(Time checkinEnd) {
+		this.checkinEnd = checkinEnd;
 	}
 
 	public String getGate() {
@@ -155,6 +112,23 @@ public class Flight {
 	public void setGate(String gate) {
 		this.gate = gate;
 	}
+
+	public String getPlane() {
+		return plane;
+	}
+
+	public void setPlane(String plane) {
+		this.plane = plane;
+	}
+
+	public void addPassenger(Passenger passenger){
+		passengers.add(passenger);
+	}
+
+	public List<Passenger> getPassengers() {
+		return passengers;
+	}
+	
 	
 	
 }
