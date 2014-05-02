@@ -81,10 +81,4 @@ public class FlightManager {
 		}
 		throw new Exception("No such reservation number");
 	}
-
-	public String getSeatByReservation(String reservationNumber) throws Exception{
-		Passenger passenger = getPassengerByReservation(reservationNumber);
-		return passenger.getSeat();
-
-	}
 }

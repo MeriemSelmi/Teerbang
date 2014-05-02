@@ -83,7 +83,7 @@ public class AirplaneActivity extends Activity {
 	private CharSequence mTitle;
 	private String[] mMenusTitles;
 	
-	private FlightManager manager = new FlightManager();
+	private static FlightManager manager = new FlightManager();
 	private Intent intent;
 	private static String reservationNumber;
 	private static String flightNumber;
@@ -150,16 +150,6 @@ public class AirplaneActivity extends Activity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	/* Called whenever we call invalidateOptionsMenu() */
-	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		// If the nav drawer is open, hide action items related to the content
-		// view
-		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-		menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
-		return super.onPrepareOptionsMenu(menu);
-	}
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// The action bar home/up action should open or close the drawer.
@@ -169,17 +159,9 @@ public class AirplaneActivity extends Activity {
 		}
 		// Handle action buttons
 		switch (item.getItemId()) {
-		case R.id.action_websearch:
-			// create intent to perform web search for this planet
-			Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-			intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
-			// catch event that there's no activity to handle intent
-			if (intent.resolveActivity(getPackageManager()) != null) {
-				startActivity(intent);
-			} else {
-				Toast.makeText(this, R.string.app_not_available,
-						Toast.LENGTH_LONG).show();
-			}
+		case R.id.action_disconnect:
+			Intent intent = new Intent(this, SplashActivity.class);
+			startActivity(intent);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -259,7 +241,13 @@ public class AirplaneActivity extends Activity {
 			
 			switch (i) {
 			case 0:
-				String seat = "B4"; //////////////////////////TEST
+				String seat="";
+				try {
+					seat = manager.getPassengerByReservation(reservationNumber).getSeat();
+				} catch (Exception e) {
+					Toast.makeText(getActivity(), "Please reconnect yourself", Toast.LENGTH_SHORT).show();
+					e.printStackTrace();
+				}
 			    int seatID = getActivity().getResources().getIdentifier("seat_"+seat, "id", getActivity().getPackageName());
 			    Button seatButton = (Button)rootView.findViewById(seatID);
 			    seatButton.setBackgroundColor(Color.RED);
