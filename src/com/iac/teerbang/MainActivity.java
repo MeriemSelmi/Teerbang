@@ -78,12 +78,19 @@ public class MainActivity extends Activity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private String[] mMenusTitles;
-
+	private String reservationNumber;
+	private String flightNumber;
+	private Intent intent;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		
+		intent = getIntent();
+		reservationNumber = intent.getStringExtra("reservationNumber");
+		flightNumber = intent.getStringExtra("flightNumber");
+		Toast.makeText(this, reservationNumber, Toast.LENGTH_SHORT).show();
+		
 		mTitle = mDrawerTitle = getTitle();
 		mMenusTitles = getResources().getStringArray(
 				R.array.airport_items_array);
