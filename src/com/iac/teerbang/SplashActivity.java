@@ -47,7 +47,6 @@ public class SplashActivity extends Activity {
 		// Khoubeib
 
 		reservationNumber = (EditText) findViewById(R.id.checkReservation);
-
 		flightNumber = (EditText) findViewById(R.id.checkFlightNumber);
 		checkButton = (Button) findViewById(R.id.checkButton);
 		flightManager = new FlightManager();
@@ -64,8 +63,11 @@ public class SplashActivity extends Activity {
 
 					Intent intent = new Intent(view.getContext(),
 							MainActivity.class);
-					intent.putExtra("reservationNumber", reservationNumber.getText().toString());
-					intent.putExtra("filghtNumber", flightNumber.getText().toString());
+					intent.putExtra("reservationNumber", reservationNumber
+							.getText().toString());
+					intent.putExtra("filghtNumber", flightNumber.getText()
+							.toString());
+
 					AppMsg.makeText((Activity) view.getContext(),
 							"welcome back", AppMsg.STYLE_INFO).show();
 					startActivity(intent);
