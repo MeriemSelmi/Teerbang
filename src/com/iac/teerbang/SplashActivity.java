@@ -4,13 +4,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract.CommonDataKinds.Relation;
+import android.text.Layout;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class SplashActivity extends Activity {
-	Animation animation; 
+	Animation animationLogo, animationForm; 
 	ImageView logo;
+	RelativeLayout form;
 	
 	
 	//Khoubeib
@@ -20,12 +24,14 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
-		animation = AnimationUtils.loadAnimation(this, R.anim.down_to_up);
+		animationLogo = AnimationUtils.loadAnimation(this, R.anim.logo);
+		animationForm = AnimationUtils.loadAnimation(this, R.anim.form); 
+		
 		logo = (ImageView) findViewById(R.id.splash_image);
-		logo.startAnimation(animation);
+		logo.startAnimation(animationLogo);
 
-		
-		
+		form = (RelativeLayout) findViewById(R.id.checkForm);
+		form.startAnimation(animationForm);
 		
 		
 		
