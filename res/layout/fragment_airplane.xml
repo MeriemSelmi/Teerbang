@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/plane" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:weightSum="13" >
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_A1"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+
+                <Button
+                    android:id="@+id/seat_A2"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_A3"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+
+                <Button
+                    android:id="@+id/seat_A4"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_A5"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+
+                <Button
+                    android:id="@+id/seat_A6"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_A7"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+
+                <Button
+                    android:id="@+id/seat_A8"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#27ae60" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_B1"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B2"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_B3"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B4"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_B5"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B6"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_B7"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B8"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_B9"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B10"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_B11"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B12"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_B13"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B14"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_B15"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B16"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_B17"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B18"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_B19"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+
+                <Button
+                    android:id="@+id/seat_B20"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#f39c12" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_C1"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <Button
+                    android:id="@+id/seat_C2"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_C3"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <Button
+                    android:id="@+id/seat_C4"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_C5"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <Button
+                    android:id="@+id/seat_C6"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_C7"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <Button
+                    android:id="@+id/seat_C8"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/seat_C9"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <Button
+                    android:id="@+id/seat_C10"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/seat_C11"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+
+                <Button
+                    android:id="@+id/seat_C12"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="3dp"
+                    android:background="#2980b9" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</LinearLayout>

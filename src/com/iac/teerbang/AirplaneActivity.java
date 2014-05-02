@@ -70,7 +70,7 @@ import android.widget.Toast;
  * overlay on top of the current content.
  * </p>
  */
-public class MainActivity extends Activity {
+public class AirplaneActivity extends Activity {
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -82,11 +82,11 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_airplane);
 
 		mTitle = mDrawerTitle = getTitle();
 		mMenusTitles = getResources().getStringArray(
-				R.array.airport_items_array);
+				R.array.airplane_items_array);
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -239,16 +239,17 @@ public class MainActivity extends Activity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			
-			View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
+			View rootView = inflater.inflate(R.layout.fragment_airplane, container, false);
 			
 			int i = getArguments().getInt(ARG_PLANET_NUMBER);
-			String planet = getResources().getStringArray(R.array.airport_items_array)[i];
+			String planet = getResources().getStringArray(R.array.airplane_items_array)[i];
 			
-			if( i== 4 ){
-				Intent intent = new Intent(getActivity(), AirplaneActivity.class);
+			if( i== 1 ){
+				Intent intent = new Intent(getActivity(), MainActivity.class);
 				startActivity(intent);
 			}
-//			else{
+			
+//			if( i== 0 ){
 //				rootView = inflater.inflate(R.layout.fragment_airplane, container, false);
 //			}
 

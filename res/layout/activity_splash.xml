@@ -34,6 +34,7 @@
             android:gravity="center"
             android:hint="Reservation number"
             android:padding="10dp"
+            android:text="res01"
             android:textColorHint="#afafaf" >
         </EditText>
 
@@ -50,6 +51,7 @@
             android:ems="10"
             android:gravity="center"
             android:hint="Flight number"
+            android:text="1000AB1"
             android:padding="10dp"
             android:textColorHint="#afafaf" />
 

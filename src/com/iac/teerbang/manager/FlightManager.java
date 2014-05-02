@@ -32,7 +32,7 @@ public class FlightManager {
 		Flight flight = new Flight("1000AB1", "Tunis Carthage",
 				"Dublin Airport", departureTime, arrivalTime, "Tunisair",
 				checkinStart, checkinEnd, "Gate A", "Airbus A330");
-		Passenger passenger = new Passenger("Bedis Tlili", "res01", "4A",
+		Passenger passenger = new Passenger("Bedis Tlili", "res01", "A4",
 				"First Class");
 		flight.addPassenger(passenger);
 		fligths.add(flight);
@@ -45,7 +45,7 @@ public class FlightManager {
 		flight = new Flight("2000AB2", "Tunis Carthage", "Sao Paolo Airport",
 				departureTime, arrivalTime, "Syphax Airlines", checkinStart,
 				checkinEnd, "Gate B", "Airbus A330");
-		passenger = new Passenger("Khoubeib Selmi", "res02", "2B",
+		passenger = new Passenger("Khoubeib Selmi", "res02", "B2",
 				"Business Class");
 		flight.addPassenger(passenger);
 		fligths.add(flight);
