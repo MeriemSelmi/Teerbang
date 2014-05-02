@@ -66,6 +66,8 @@ public class SplashActivity extends Activity {
 							MainActivity.class);
 					intent.putExtra("reservationNumber", reservationNumber.getText().toString());
 					intent.putExtra("filghtNumber", flightNumber.getText().toString());
+					AppMsg.makeText((Activity) view.getContext(),
+							"welcome back", AppMsg.STYLE_INFO).show();
 					startActivity(intent);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
