@@ -9,9 +9,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class SplashActivity extends Activity {
-	private final int SPLASH_DISPLAY_LENGTH = 3000;
 	Animation animation; 
 	ImageView logo;
+	
+	
+	//Khoubeib
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,29 +23,14 @@ public class SplashActivity extends Activity {
 		animation = AnimationUtils.loadAnimation(this, R.anim.down_to_up);
 		logo = (ImageView) findViewById(R.id.splash_image);
 		logo.startAnimation(animation);
+
 		
-		new Handler().postDelayed(new Runnable() {
-
-			@Override
-			public void run() {
-
-				Intent intent = new Intent(SplashActivity.this,
-						MainActivity.class);
-				startActivity(intent);
-
-				SplashActivity.this.finish();
-
-				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-
-			}
-		}, SPLASH_DISPLAY_LENGTH);
-
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-			}
-		}, SPLASH_DISPLAY_LENGTH);
-
+		
+		
+		
+		
+		//Khoubeib
+		
 	}
 
 	@Override
