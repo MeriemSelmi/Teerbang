@@ -70,7 +70,7 @@ import android.widget.Toast;
  * overlay on top of the current content.
  * </p>
  */
-public class MainActivity extends Activity {
+public class AirplaneActivity extends Activity {
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -82,11 +82,11 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_airplane);
 
 		mTitle = mDrawerTitle = getTitle();
 		mMenusTitles = getResources().getStringArray(
-				R.array.airport_items_array);
+				R.array.airplane_items_array);
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -155,8 +155,9 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		// Handle action buttons
-
-		if (item.getItemId() == R.id.action_websearch) {
+		switch (item.getItemId()) {
+		case R.id.action_websearch:
+			// create intent to perform web search for this planet
 			Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
 			intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
 			// catch event that there's no activity to handle intent
@@ -167,12 +168,7 @@ public class MainActivity extends Activity {
 						Toast.LENGTH_LONG).show();
 			}
 			return true;
-		}
-
-		// create intent to perform web search for this planet
-
-		else {
-
+		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
@@ -191,13 +187,12 @@ public class MainActivity extends Activity {
 		// update the main content by replacing fragments
 		Fragment fragment = new PlanetFragment();
 		Bundle args = new Bundle();
-
+		
 		args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
 		fragment.setArguments(args);
 
 		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction()
-				.replace(R.id.content_frame, fragment).commit();
+		fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
 		// update selected item and title, then close the drawer
 		mDrawerList.setItemChecked(position, true);
@@ -234,7 +229,7 @@ public class MainActivity extends Activity {
 	 * Fragment that appears in the "content_frame", shows a planet
 	 */
 	public static class PlanetFragment extends Fragment {
-
+		
 		public static final String ARG_PLANET_NUMBER = "planet_number";
 
 		public PlanetFragment() {
@@ -242,25 +237,23 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-
-			View rootView = inflater.inflate(R.layout.fragment_planet,
-					container, false);
-
-			int i = getArguments().getInt(ARG_PLANET_NUMBER);
-			String planet = getResources().getStringArray(R.array.airport_items_array)[i];
+		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			
-			if( i== 4 ){
-				Intent intent = new Intent(getActivity(), AirplaneActivity.class);
+			View rootView = inflater.inflate(R.layout.fragment_airplane, container, false);
+			
+			int i = getArguments().getInt(ARG_PLANET_NUMBER);
+			String planet = getResources().getStringArray(R.array.airplane_items_array)[i];
+			
+			if( i== 1 ){
+				Intent intent = new Intent(getActivity(), MainActivity.class);
 				startActivity(intent);
 			}
-//			else{
+			
+//			if( i== 0 ){
 //				rootView = inflater.inflate(R.layout.fragment_airplane, container, false);
 //			}
 
-			// Toast.makeText(rootView.getContext(), String.valueOf(i),
-			// Toast.LENGTH_LONG).show();
+//			Toast.makeText(rootView.getContext(), String.valueOf(i), Toast.LENGTH_LONG).show();
 			getActivity().setTitle(planet);
 			return rootView;
 		}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/splash_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo" />
+
+    <RelativeLayout
+        android:id="@+id/checkForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp" >
+
+        <EditText
+            android:id="@+id/checkReservation"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/myshape"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Reservation number"
+            android:padding="10dp"
+            android:text="res01"
+            android:textColorHint="#afafaf" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/checkFlightNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/checkReservation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/myshape"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Flight number"
+            android:text="1000AB1"
+            android:padding="10dp"
+            android:textColorHint="#afafaf" />
+
+        <Button
+            android:id="@+id/checkButton"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/checkFlightNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/myshape"
+            android:text="Check in"
+            android:textColor="#afafaf" />
+    </RelativeLayout>
+
+</LinearLayout>
