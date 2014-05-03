@@ -16,6 +16,7 @@
 
 package com.iac.teerbang;
 
+import com.iac.teerbang.MainActivity.ItemFragment;
 import com.iac.teerbang.manager.FlightManager;
 
 import android.app.Activity;
@@ -179,19 +180,24 @@ public class AirplaneActivity extends Activity {
 	}
 
 	private void selectItem(int position) {
-		// update the main content by replacing fragments
-		Fragment fragment = new PlanetFragment();
-		Bundle args = new Bundle();
-		
-		args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
-		fragment.setArguments(args);
+		Fragment fragment;
+		if(position == 1){
+			fragment = new EmergencyFragment();
+		}else{
+			fragment = new PlanetFragment();
+			Bundle args = new Bundle();
+
+			args.putInt(ItemFragment.ARG_PLANET_NUMBER, position);
+			fragment.setArguments(args);
+		}
 
 		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+		fragmentManager.beginTransaction()
+				.replace(R.id.content_frame, fragment).commit();
 
 		// update selected item and title, then close the drawer
 		mDrawerList.setItemChecked(position, true);
-		setTitle(mMenusTitles[position]);
+		setTitle(mMenusTitles[position]); 
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
 
@@ -250,10 +256,10 @@ public class AirplaneActivity extends Activity {
 				}
 			    int seatID = getActivity().getResources().getIdentifier("seat_"+seat, "id", getActivity().getPackageName());
 			    Button seatButton = (Button)rootView.findViewById(seatID);
-			    seatButton.setBackgroundColor(Color.RED);
+			    seatButton.setBackgroundColor(Color.RED);  
 			    
 				break;
-			case 1:
+			case 2:
 				Intent intent = new Intent(getActivity(), MainActivity.class);
 				intent.putExtra("reservationNumber", reservationNumber);
 				intent.putExtra("filghtNumber", flightNumber);
