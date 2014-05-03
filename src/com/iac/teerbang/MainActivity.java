@@ -292,9 +292,8 @@ public class MainActivity extends Activity {
 				intent.putExtra("filghtNumber", flightNumber);
 				startActivity(intent);
 				break;
-			case 9:
-				rootView = inflater.inflate(R.layout.fragment_airport,	container, false);
-				intent = new Intent(getActivity(), CurrencyConverterFragment.class);
+			case 10:
+				intent = new Intent(getActivity(), WeatherDisplayActivity.class);
 				startActivity(intent);
 				break;
 			default:

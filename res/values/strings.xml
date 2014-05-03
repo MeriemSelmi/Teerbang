@@ -22,6 +22,7 @@
         <item>WC</item>
         <item>Check my seat</item>
         <item >Currency Converter</item>
+        <item >Weather</item>
     </string-array>
 
     <string-array name="airplane_items_array">

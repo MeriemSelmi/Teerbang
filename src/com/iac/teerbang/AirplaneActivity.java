@@ -16,13 +16,10 @@
 
 package com.iac.teerbang;
 
-import com.iac.teerbang.MainActivity.ItemFragment;
-import com.iac.teerbang.manager.FlightManager;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -42,6 +39,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.iac.teerbang.MainActivity.ItemFragment;
+import com.iac.teerbang.manager.FlightManager;
 
 /**
  * This example illustrates a common usage of the DrawerLayout widget in the
