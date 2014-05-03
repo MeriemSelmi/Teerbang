@@ -234,6 +234,7 @@ public class MainActivity extends Activity {
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 
+			Intent intent;
 			View rootView = inflater.inflate(R.layout.fragment_planet,
 					container, false);
 
@@ -254,14 +255,19 @@ public class MainActivity extends Activity {
 			    
 				break;
 			case 4:
-				Intent intent = new Intent(getActivity(), AirplaneActivity.class);
+				intent = new Intent(getActivity(), AirplaneActivity.class);
 				intent.putExtra("reservationNumber", reservationNumber);
 				intent.putExtra("filghtNumber", flightNumber);
+				startActivity(intent);
+				break;
+			case 5:
+				intent = new Intent(getActivity(), CurrencyConverter.class);
 				startActivity(intent);
 				break;
 			default:
 				break;
 			}
+			
 			getActivity().setTitle(planet);
 			return rootView;
 		}

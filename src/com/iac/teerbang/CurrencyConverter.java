@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -43,6 +44,11 @@ public class CurrencyConverter extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.currency_convertor);
+
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+				.permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+
 		Spinner s1 = (Spinner) findViewById(R.id.spinner1);
 		Spinner s2 = (Spinner) findViewById(R.id.spinner2);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -78,6 +84,7 @@ public class CurrencyConverter extends Activity {
 					} catch (ClientProtocolException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

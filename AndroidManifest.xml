@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -37,9 +38,18 @@
             android:name="com.iac.teerbang.AirplaneActivity" 
             android:label="@string/title_activity_airplane"
             android:parentActivityName="com.iac.teerbang.MainActivity" >
+        
+       
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.iac.teerbang.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.iac.teerbang.CurrencyConverter" 
+            android:label="CurrencyActivity"
+            android:parentActivityName="com.iac.teerbang.MainActivity" >
+        />
+        
         </activity>
     </application>
 
