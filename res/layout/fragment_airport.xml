@@ -78,6 +78,15 @@
             android:layout_alignParentTop="true"
             android:scaleType="centerInside"
             android:src="@drawable/ter_wcs" />
+        
+        <ImageView
+            android:id="@+id/airport_track"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ter_track" />
 
     </RelativeLayout>
 
