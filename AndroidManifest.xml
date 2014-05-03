@@ -54,14 +54,15 @@
         </activity>
 
         
-        
+        <activity
+            android:name="com.iac.teerbang.WeatherDisplayActivity" >
+        </activity>
         
         <activity
             android:name="com.iac.teerbang.AboutActivity"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
         
->>>>>>> 928200244f038444c10d9d9b0717246c21fc9a51
     </application>
 
 </manifest>
