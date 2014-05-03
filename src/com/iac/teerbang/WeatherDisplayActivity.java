@@ -40,19 +40,21 @@ public class WeatherDisplayActivity extends FragmentActivity {
 	private TextView cityText;
 	private String option;
 	private TextView temp;
+	private TextView weatherStatus;
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_display_content);
+		setContentView(R.layout.weather_display_content);
 		Intent intent = getIntent();
 		String city = intent.getStringExtra(WeatherConstants.EXTRA_MESSAGE);
 		option = "Default";
 		String lang = "en";
 		cityText = (TextView) findViewById(R.id.cityName);
 		temp = (TextView) findViewById(R.id.temprDegree);
+		weatherStatus = (TextView) findViewById(R.id.weatherStatus);
 		
 		if (city == null)
 			city = "Gurgaon, IN";
@@ -64,9 +66,8 @@ public class WeatherDisplayActivity extends FragmentActivity {
 			// System.out.println(ex.getMessage());
 			Builder alert = new AlertDialog.Builder(
 					WeatherDisplayActivity.this);
-			alert.setTitle("You made me crash, man!");
-			alert.setMessage("Blast! Something went terribly wrong with the "
-					+ "request. Check your connection and try again.");
+			alert.setTitle("Error !");
+			alert.setMessage("Check your connection please !");
 			alert.setPositiveButton("OK", null);
 			alert.show();
 		}
@@ -102,8 +103,10 @@ public class WeatherDisplayActivity extends FragmentActivity {
 								&& (weather.location.getCity().length() > 0) ? ", "
 								: "") + weather.location.getCountry());
 				temp.setText(""
-						+ Math.round((weather.temperature.getTemp() - 275.15)));
+						+ Math.round((weather.temperature.getTemp() - 275.15))+"°C");
 				temp.setShadowLayer(2, 2, 2, 0xFF303030);
+				
+				weatherStatus.setText(weather.currentCondition.getCondition());
 				
 				
 			} catch (Exception ex) {

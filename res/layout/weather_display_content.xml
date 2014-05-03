@@ -8,14 +8,18 @@
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.04"
-        android:text="TextView" />
+        android:layout_weight="0.04"/>
     
     <TextView
         android:id="@+id/temprDegree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.04"
-        android:text="TextView" />
+        android:layout_weight="0.04"/>
+    
+    <TextView
+        android:id="@+id/weatherStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"/>
 
 </LinearLayout>
