@@ -1,5 +1,7 @@
 package com.iac.teerbang;
 
+import java.io.ObjectOutputStream.PutField;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -62,6 +64,8 @@ public class SplashActivity extends Activity {
 
 					Intent intent = new Intent(view.getContext(),
 							MainActivity.class);
+					intent.putExtra("reservationNumber", reservationNumber.getText().toString());
+					intent.putExtra("filghtNumber", flightNumber.getText().toString());
 					startActivity(intent);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
