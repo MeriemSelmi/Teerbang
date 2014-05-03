@@ -37,7 +37,7 @@
                 android:gravity="center"
                 android:hint="N° Reservation"
                 android:padding="10dp"
-                android:text="res01"
+                android:text="res02"
                 android:textColorHint="#afafaf" >
             </EditText>
 
@@ -57,7 +57,7 @@
                 android:gravity="center"
                 android:hint="N° Vol"
                 android:padding="10dp"
-                android:text="1000AB1"
+                android:text="2000AB2"
                 android:textColorHint="#afafaf" />
         </LinearLayout>
 

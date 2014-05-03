@@ -40,6 +40,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -257,6 +258,9 @@ public class AirplaneActivity extends Activity {
 			    int seatID = getActivity().getResources().getIdentifier("seat_"+seat, "id", getActivity().getPackageName());
 			    Button seatButton = (Button)rootView.findViewById(seatID);
 			    seatButton.setBackgroundColor(Color.RED);  
+			    
+			    TextView seatTV = (TextView) rootView.findViewById(R.id.seat_place);
+			    seatTV.setText(seat);
 			    
 				break;
 			case 2:

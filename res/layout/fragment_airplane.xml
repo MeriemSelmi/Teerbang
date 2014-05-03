@@ -469,6 +469,17 @@
                     android:background="#2980b9" />
             </TableRow>
         </TableLayout>
+
+        <TextView
+            android:id="@+id/seat_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="19dp"
+            android:layout_marginTop="22dp"
+            android:textColor="@color/alert" />
+
     </RelativeLayout>
 
 </LinearLayout>
