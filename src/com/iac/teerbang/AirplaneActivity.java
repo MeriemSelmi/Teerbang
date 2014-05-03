@@ -16,12 +16,7 @@
 
 package com.iac.teerbang;
 
-<<<<<<< HEAD
-=======
-import com.iac.teerbang.MainActivity.ItemFragment;
-import com.iac.teerbang.manager.FlightManager;
 
->>>>>>> f2b8fecac0965ef5cadf25a5d3f6e2e08f5c34aa
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -45,6 +40,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.iac.teerbang.MainActivity.ItemFragment;
 import com.iac.teerbang.manager.FlightManager;
 
 /**
