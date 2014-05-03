@@ -12,10 +12,14 @@
 	<string name="calculate">Calculate</string>
 
     <string-array name="airport_items_array">
+        <item>All</item>
         <item>Registration</item>
         <item>Gates</item>
-        <item>Banks</item>
         <item>Coffees</item>
+        <item>Agents</item>
+        <item>Infos</item>
+        <item>Shops</item>
+        <item>WC</item>
         <item>Check my seat</item>
         <item >Currency Converter</item>
     </string-array>

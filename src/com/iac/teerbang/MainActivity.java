@@ -32,6 +32,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 /**
@@ -177,10 +178,10 @@ public class MainActivity extends Activity {
 
 	private void selectItem(int position) {
 		// update the main content by replacing fragments
-		Fragment fragment = new PlanetFragment();
+		Fragment fragment = new ItemFragment();
 		Bundle args = new Bundle();
 
-		args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
+		args.putInt(ItemFragment.ARG_PLANET_NUMBER, position);
 		fragment.setArguments(args);
 
 		FragmentManager fragmentManager = getFragmentManager();
@@ -221,11 +222,13 @@ public class MainActivity extends Activity {
 	/**
 	 * Fragment that appears in the "content_frame", shows a planet
 	 */
-	public static class PlanetFragment extends Fragment {
+	public static class ItemFragment extends Fragment {
 
+		ImageView agents,coffees,gates,infos,luggage,shops,wcs;
+		
 		public static final String ARG_PLANET_NUMBER = "planet_number";
 		Intent intent;
-		public PlanetFragment() {
+		public ItemFragment() {
 			// Empty constructor required for fragment subclasses
 		}
 
@@ -234,32 +237,59 @@ public class MainActivity extends Activity {
 				Bundle savedInstanceState) {
 
 			Intent intent;
-			View rootView = inflater.inflate(R.layout.fragment_planet,
+			View rootView = inflater.inflate(R.layout.fragment_airport,
 					container, false);
 
 			int i = getArguments().getInt(ARG_PLANET_NUMBER);
 			String planet = getResources().getStringArray(R.array.airport_items_array)[i];
 			
+			agents = (ImageView) rootView.findViewById(R.id.airport_agents);
+			coffees = (ImageView) rootView.findViewById(R.id.airport_coffees);
+			gates = (ImageView) rootView.findViewById(R.id.airport_gates);
+			infos = (ImageView) rootView.findViewById(R.id.airport_infos);
+			luggage = (ImageView) rootView.findViewById(R.id.airport_luggage);
+			shops = (ImageView) rootView.findViewById(R.id.airport_shops);
+			wcs = (ImageView) rootView.findViewById(R.id.airport_wcs);
+			
 			switch (i) {
 			case 0:
-			    
+				setVisibility(View.VISIBLE);
 				break;
 			case 1:
-			    
+				setVisibility(View.INVISIBLE);
+			    luggage.setVisibility(View.VISIBLE);
 				break;
 			case 2:
-			    
+				setVisibility(View.INVISIBLE);
+				gates.setVisibility(View.VISIBLE);
 				break;
 			case 3:
-			    
+				setVisibility(View.INVISIBLE);
+				coffees.setVisibility(View.VISIBLE);
 				break;
 			case 4:
+				setVisibility(View.INVISIBLE);
+				agents.setVisibility(View.VISIBLE);
+				break;
+			case 5:
+				setVisibility(View.INVISIBLE);
+				infos.setVisibility(View.VISIBLE);
+				break;
+			case 6:
+				setVisibility(View.INVISIBLE);
+				shops.setVisibility(View.VISIBLE);
+				break;
+			case 7:
+				setVisibility(View.INVISIBLE);
+				wcs.setVisibility(View.VISIBLE);
+				break;
+			case 8:
 				intent = new Intent(getActivity(), AirplaneActivity.class);
 				intent.putExtra("reservationNumber", reservationNumber);
 				intent.putExtra("filghtNumber", flightNumber);
 				startActivity(intent);
 				break;
-			case 5:
+			case 9:
 				intent = new Intent(getActivity(), CurrencyConverter.class);
 				startActivity(intent);
 				break;
@@ -269,6 +299,17 @@ public class MainActivity extends Activity {
 			
 			getActivity().setTitle(planet);
 			return rootView;
+		}
+		
+		public void setVisibility(int visible){
+			agents.setVisibility(visible);
+			coffees.setVisibility(visible);
+			gates.setVisibility(visible);
+			infos.setVisibility(visible);
+			luggage.setVisibility(visible);
+			shops.setVisibility(visible);
+			wcs.setVisibility(visible);
+			
 		}
 	}
 	
