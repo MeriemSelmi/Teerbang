@@ -248,7 +248,7 @@ public class AirplaneActivity extends Activity {
 			
 			switch (i) {
 			case 0:
-				String seat="";
+				String seat="";  
 				try {
 					seat = manager.getPassengerByReservation(reservationNumber).getSeat();
 				} catch (Exception e) {

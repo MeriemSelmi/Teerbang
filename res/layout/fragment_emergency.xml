@@ -29,7 +29,7 @@
             android:layout_below="@+id/imageView1"
             android:layout_marginTop="18dp"
             android:layout_toLeftOf="@+id/textView1"
-            android:src="@drawable/security_46" />
+            android:src="@drawable/emergencya_button" />
 
         <ImageView
             android:id="@+id/emergencyB"
@@ -38,7 +38,7 @@
             android:layout_alignTop="@+id/emergencyA"
             android:layout_marginLeft="14dp"
             android:layout_toRightOf="@+id/textView1"
-            android:src="@drawable/security_48" />
+            android:src="@drawable/emergencyb_button" />
 
         <LinearLayout
             android:id="@+id/emergencyLayout"
