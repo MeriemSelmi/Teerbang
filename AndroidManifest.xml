@@ -41,6 +41,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.iac.teerbang.MainActivity" />
         </activity>
+        
+        <activity
+            android:name="com.iac.teerbang.AboutActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        
     </application>
 
 </manifest>

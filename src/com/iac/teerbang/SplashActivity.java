@@ -1,10 +1,9 @@
 package com.iac.teerbang;
 
-import java.io.ObjectOutputStream.PutField;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -13,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.devspark.appmsg.AppMsg;
 import com.iac.teerbang.domain.Flight;
@@ -24,13 +22,14 @@ public class SplashActivity extends Activity {
 	ImageView logo;
 	RelativeLayout form;
 
-	// Khoubeib
 	EditText reservationNumber;
 	EditText flightNumber;
 	Button checkButton;
 	FlightManager flightManager;
 	Flight flight;
-
+	Intent intent;
+	
+	boolean isKill = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,8 +42,6 @@ public class SplashActivity extends Activity {
 
 		form = (RelativeLayout) findViewById(R.id.checkForm);
 		form.startAnimation(animationForm);
-
-		// Khoubeib
 
 		reservationNumber = (EditText) findViewById(R.id.checkReservation);
 		flightNumber = (EditText) findViewById(R.id.checkFlightNumber);
@@ -61,7 +58,7 @@ public class SplashActivity extends Activity {
 							reservationNumber.getText().toString(),
 							flightNumber.getText().toString());
 
-					Intent intent = new Intent(view.getContext(),
+					intent = new Intent(view.getContext(),
 							MainActivity.class);
 					intent.putExtra("reservationNumber", reservationNumber
 							.getText().toString());
@@ -70,7 +67,18 @@ public class SplashActivity extends Activity {
 
 					AppMsg.makeText((Activity) view.getContext(),
 							"welcome back", AppMsg.STYLE_INFO).show();
-					startActivity(intent);
+					
+					Handler handler = new Handler();
+					handler.postDelayed(new Runnable() {
+						
+						@Override
+						public void run() {
+							startActivity(intent);
+							SplashActivity.this.finish();
+							overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+						}
+					}, 1000);
+					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					AppMsg.makeText((Activity) view.getContext(),
@@ -80,11 +88,22 @@ public class SplashActivity extends Activity {
 				}
 			}
 		});
+		
 	}
 
 	@Override
+	public void onResume(){
+		if(isKill){
+		    finish();
+		}
+		super.onResume();
+	}
+	
+	@Override
 	public void onBackPressed() {
+		isKill = true;
 		this.finish();
+		getIntent().setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		super.onBackPressed();
 	}
 }
