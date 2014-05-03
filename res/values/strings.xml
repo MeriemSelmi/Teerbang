@@ -2,8 +2,7 @@
 <resources>
 
     <string name="app_name">Teerbang</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="action_disconnect">Disconnect</string>
 
     <string-array name="airport_items_array">
         <item>Registration</item>
