@@ -267,4 +267,14 @@ public class AirplaneActivity extends Activity {
 			return rootView;
 		}
 	}
+	
+	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent(this, MainActivity.class);
+		intent.putExtra("reservationNumber", reservationNumber);
+		intent.putExtra("filghtNumber", flightNumber);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+		startActivity(intent);
+		super.onBackPressed();
+	}
 }
