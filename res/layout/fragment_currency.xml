@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/LinearLayout1"
         android:layout_margin="10dp"
-        android:background="@drawable/myshape"
+        android:background="@drawable/checkin_button"
         android:text="@string/calculate" />
 
     <TextView
