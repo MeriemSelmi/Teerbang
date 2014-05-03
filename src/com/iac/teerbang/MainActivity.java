@@ -78,8 +78,8 @@ public class MainActivity extends Activity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private String[] mMenusTitles;
-	private String reservationNumber;
-	private String flightNumber;
+	private static String reservationNumber;
+	private static String flightNumber;
 	private Intent intent;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +89,6 @@ public class MainActivity extends Activity {
 		intent = getIntent();
 		reservationNumber = intent.getStringExtra("reservationNumber");
 		flightNumber = intent.getStringExtra("flightNumber");
-		Toast.makeText(this, reservationNumber, Toast.LENGTH_SHORT).show();
 		
 		mTitle = mDrawerTitle = getTitle();
 		mMenusTitles = getResources().getStringArray(
@@ -258,16 +257,28 @@ public class MainActivity extends Activity {
 			int i = getArguments().getInt(ARG_PLANET_NUMBER);
 			String planet = getResources().getStringArray(R.array.airport_items_array)[i];
 			
-			if( i== 4 ){
+			switch (i) {
+			case 0:
+			    
+				break;
+			case 1:
+			    
+				break;
+			case 2:
+			    
+				break;
+			case 3:
+			    
+				break;
+			case 4:
 				Intent intent = new Intent(getActivity(), AirplaneActivity.class);
+				intent.putExtra("reservationNumber", reservationNumber);
+				intent.putExtra("filghtNumber", flightNumber);
 				startActivity(intent);
+				break;
+			default:
+				break;
 			}
-//			else{
-//				rootView = inflater.inflate(R.layout.fragment_airplane, container, false);
-//			}
-
-			// Toast.makeText(rootView.getContext(), String.valueOf(i),
-			// Toast.LENGTH_LONG).show();
 			getActivity().setTitle(planet);
 			return rootView;
 		}

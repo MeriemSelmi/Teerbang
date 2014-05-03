@@ -16,12 +16,15 @@
 
 package com.iac.teerbang;
 
+import com.iac.teerbang.manager.FlightManager;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
@@ -34,6 +37,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -78,12 +82,21 @@ public class AirplaneActivity extends Activity {
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private String[] mMenusTitles;
+	
+	private FlightManager manager = new FlightManager();
+	private Intent intent;
+	private static String reservationNumber;
+	private static String flightNumber;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_airplane);
 
+		intent = getIntent();
+		reservationNumber = intent.getStringExtra("reservationNumber");
+		flightNumber = intent.getStringExtra("flightNumber");
+		
 		mTitle = mDrawerTitle = getTitle();
 		mMenusTitles = getResources().getStringArray(
 				R.array.airplane_items_array);
@@ -244,16 +257,24 @@ public class AirplaneActivity extends Activity {
 			int i = getArguments().getInt(ARG_PLANET_NUMBER);
 			String planet = getResources().getStringArray(R.array.airplane_items_array)[i];
 			
-			if( i== 1 ){
+			switch (i) {
+			case 0:
+				String seat = "B4"; //////////////////////////TEST
+			    int seatID = getActivity().getResources().getIdentifier("seat_"+seat, "id", getActivity().getPackageName());
+			    Button seatButton = (Button)rootView.findViewById(seatID);
+			    seatButton.setBackgroundColor(Color.RED);
+			    
+				break;
+			case 1:
 				Intent intent = new Intent(getActivity(), MainActivity.class);
+				intent.putExtra("reservationNumber", reservationNumber);
+				intent.putExtra("filghtNumber", flightNumber);
 				startActivity(intent);
+				break;
+			default:
+				break;
 			}
 			
-//			if( i== 0 ){
-//				rootView = inflater.inflate(R.layout.fragment_airplane, container, false);
-//			}
-
-//			Toast.makeText(rootView.getContext(), String.valueOf(i), Toast.LENGTH_LONG).show();
 			getActivity().setTitle(planet);
 			return rootView;
 		}
