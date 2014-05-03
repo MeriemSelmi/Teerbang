@@ -46,7 +46,7 @@
         </activity>
 
         <activity
-            android:name="com.iac.teerbang.CurrencyConverter" 
+            android:name="com.iac.teerbang.CurrencyConverterFragment" 
             android:label="CurrencyActivity"
             android:parentActivityName="com.iac.teerbang.MainActivity" >
        

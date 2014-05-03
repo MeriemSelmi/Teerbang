@@ -177,12 +177,16 @@ public class MainActivity extends Activity {
 	}
 
 	private void selectItem(int position) {
-		// update the main content by replacing fragments
-		Fragment fragment = new ItemFragment();
-		Bundle args = new Bundle();
+		Fragment fragment;
+		if(position == 9){
+			fragment = new CurrencyConverterFragment();
+		}else{
+			fragment = new ItemFragment();
+			Bundle args = new Bundle();
 
-		args.putInt(ItemFragment.ARG_PLANET_NUMBER, position);
-		fragment.setArguments(args);
+			args.putInt(ItemFragment.ARG_PLANET_NUMBER, position);
+			fragment.setArguments(args);
+		}
 
 		FragmentManager fragmentManager = getFragmentManager();
 		fragmentManager.beginTransaction()
@@ -237,8 +241,7 @@ public class MainActivity extends Activity {
 				Bundle savedInstanceState) {
 
 			Intent intent;
-			View rootView = inflater.inflate(R.layout.fragment_airport,
-					container, false);
+			View rootView = inflater.inflate(R.layout.fragment_airport,	container, false);
 
 			int i = getArguments().getInt(ARG_PLANET_NUMBER);
 			String planet = getResources().getStringArray(R.array.airport_items_array)[i];
@@ -290,7 +293,8 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 				break;
 			case 9:
-				intent = new Intent(getActivity(), CurrencyConverter.class);
+				rootView = inflater.inflate(R.layout.fragment_airport,	container, false);
+				intent = new Intent(getActivity(), CurrencyConverterFragment.class);
 				startActivity(intent);
 				break;
 			default:
