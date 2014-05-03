@@ -3,6 +3,11 @@
 
     <string name="app_name">Teerbang</string>
     <string name="action_disconnect">Disconnect</string>
+    <string name="one">One</string>
+    <string name="in">In</string>
+    <string name="equal">Is Equal To</string>
+    <string name="result">Click Calculate for Result</string>
+	<string name="calculate">Calculate</string>
 
     <string-array name="airport_items_array">
         <item>Registration</item>
@@ -10,11 +15,30 @@
         <item>Banks</item>
         <item>Coffees</item>
         <item>Check my seat</item>
+        <item >Currency Converter</item>
     </string-array>
 
     <string-array name="airplane_items_array">
         <item>Security</item>
         <item>Airport</item>
+    </string-array>
+    <string-array name="name">
+        <item >Indian Rupee</item>
+        <item >US Dollar</item>
+        <item >European Union Euro</item>
+        <item >Canadian Dollar</item>
+        <item >Australian Dollar</item>
+        <item >Singapore Dollar</item>
+        <item>Tunisian Dinar</item>
+    </string-array>
+    <string-array name="value">
+        <item >INR</item>
+        <item >USD</item>
+        <item >EUR</item>
+        <item >CAD</item>
+        <item >AUD</item>
+        <item >SGD</item>
+        <item >TND</item>
     </string-array>
     
     <string name="drawer_open">Open navigation drawer</string>
