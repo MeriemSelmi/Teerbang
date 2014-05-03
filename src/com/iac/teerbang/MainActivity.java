@@ -224,7 +224,7 @@ public class MainActivity extends Activity {
 	public static class PlanetFragment extends Fragment {
 
 		public static final String ARG_PLANET_NUMBER = "planet_number";
-
+		Intent intent;
 		public PlanetFragment() {
 			// Empty constructor required for fragment subclasses
 		}
@@ -253,9 +253,13 @@ public class MainActivity extends Activity {
 			    
 				break;
 			case 4:
-				Intent intent = new Intent(getActivity(), AirplaneActivity.class);
+				intent = new Intent(getActivity(), AirplaneActivity.class);
 				intent.putExtra("reservationNumber", reservationNumber);
 				intent.putExtra("filghtNumber", flightNumber);
+				startActivity(intent);
+				break;
+			case 5:
+				intent = new Intent(getActivity(), CurrencyConverter.class);
 				startActivity(intent);
 				break;
 			default:
