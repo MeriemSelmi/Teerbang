@@ -16,6 +16,12 @@
 
 package com.iac.teerbang;
 
+<<<<<<< HEAD
+=======
+import com.iac.teerbang.MainActivity.ItemFragment;
+import com.iac.teerbang.manager.FlightManager;
+
+>>>>>>> f2b8fecac0965ef5cadf25a5d3f6e2e08f5c34aa
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -36,6 +42,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.iac.teerbang.manager.FlightManager;
@@ -178,19 +185,24 @@ public class AirplaneActivity extends Activity {
 	}
 
 	private void selectItem(int position) {
-		// update the main content by replacing fragments
-		Fragment fragment = new PlanetFragment();
-		Bundle args = new Bundle();
-		
-		args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
-		fragment.setArguments(args);
+		Fragment fragment;
+		if(position == 1){
+			fragment = new EmergencyFragment();
+		}else{
+			fragment = new PlanetFragment();
+			Bundle args = new Bundle();
+
+			args.putInt(ItemFragment.ARG_PLANET_NUMBER, position);
+			fragment.setArguments(args);
+		}
 
 		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+		fragmentManager.beginTransaction()
+				.replace(R.id.content_frame, fragment).commit();
 
 		// update selected item and title, then close the drawer
 		mDrawerList.setItemChecked(position, true);
-		setTitle(mMenusTitles[position]);
+		setTitle(mMenusTitles[position]); 
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
 
@@ -240,7 +252,7 @@ public class AirplaneActivity extends Activity {
 			
 			switch (i) {
 			case 0:
-				String seat="";
+				String seat="";  
 				try {
 					seat = manager.getPassengerByReservation(reservationNumber).getSeat();
 				} catch (Exception e) {
@@ -249,10 +261,13 @@ public class AirplaneActivity extends Activity {
 				}
 			    int seatID = getActivity().getResources().getIdentifier("seat_"+seat, "id", getActivity().getPackageName());
 			    Button seatButton = (Button)rootView.findViewById(seatID);
-			    seatButton.setBackgroundColor(Color.RED);
+			    seatButton.setBackgroundColor(Color.RED);  
+			    
+			    TextView seatTV = (TextView) rootView.findViewById(R.id.seat_place);
+			    seatTV.setText(seat);
 			    
 				break;
-			case 1:
+			case 2:
 				Intent intent = new Intent(getActivity(), MainActivity.class);
 				intent.putExtra("reservationNumber", reservationNumber);
 				intent.putExtra("filghtNumber", flightNumber);

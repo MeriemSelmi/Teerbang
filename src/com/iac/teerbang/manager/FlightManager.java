@@ -17,7 +17,7 @@ public class FlightManager {
 		super();
 		fligths = new LinkedList<Flight>();
 
-		Time departureTime = new Time();
+		Time departureTime = new Time(); 
 		departureTime.set(0, 30, 19, 5, 5, 2014);
 		Time arrivalTime = new Time();
 		arrivalTime.set(0, 30, 23, 5, 5, 2014);

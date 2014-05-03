@@ -26,7 +26,8 @@
     </string-array>
 
     <string-array name="airplane_items_array">
-        <item>Security</item>
+        <item>My Seat</item>
+        <item>Emergency</item>
         <item>Airport</item>
     </string-array>
     <string-array name="name">
